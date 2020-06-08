@@ -114,7 +114,7 @@ if(cloudant) {
   			     console.log(doc);
   		  })
     })*/
-
+/*
     mydb.list(function(er, body) {
 	  if (er)
 		  return console.log('Error listing docs')
@@ -127,7 +127,7 @@ if(cloudant) {
 				  })
 			  }
 		  })
-  })
+  })*/
     /*
   mydb.db.destroy('aaa', function(err, data) {
       console.log('Error:', err);
