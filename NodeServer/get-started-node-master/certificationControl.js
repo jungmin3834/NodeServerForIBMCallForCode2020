@@ -12,7 +12,8 @@ const set = {
             "name":data.name,
             "maxPoint" : (Number(data.point) + 10 > Number(data.maxPoint) ? Number(data.point) : Number(data.maxPoint)).toString(),
             "point" : (Number(data.point) + 10).toString(),
-            "path":data.path
+            "path":data.path,
+            "hispath":data.hispath + " " + req.body.path
          };
          console.log("============================");
          console.log(user.point + " " +data.point + " "+ data.maxPoint) ;
@@ -28,6 +29,7 @@ const set = {
     },
    profile(mydb,req,res){
       mydb.getDbByName('login').get(req.body.id, function(err, data) {
+        console.log(err + "\n" + data.password  + " " + req.body.password)
         if(!err && data.password == req.body.password){
           console.log("================");
           console.log(data);
@@ -38,7 +40,8 @@ const set = {
              "name":data.name,
              "maxPoint" : data.maxPoint.toString(),
              "point" : data.point.toString(),
-             "path":req.body.path
+             "path":req.body.path,
+             "hispath":data.hispath + " " + req.body.path
           };
 
           mydb.getDbByName('login').insert(user, function(err, data) {
