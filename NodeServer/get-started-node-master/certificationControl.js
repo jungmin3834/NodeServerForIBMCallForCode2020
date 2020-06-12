@@ -10,7 +10,7 @@ const set = {
             "_rev": data._rev,
             "password":data.password,
             "name":data.name,
-            "maxPoint" : (Number(data.point) + 10 > Number(data.maxPoint) ? Number(data.point) : Number(data.maxPoint)).toString(),
+            "maxPoint" : (Number(data.point) + 10 >= Number(data.maxPoint) ? Number(data.point) : Number(data.maxPoint)).toString(),
             "point" : (Number(data.point) + 10).toString(),
             "path":data.path,
             "hispath":data.hispath + " " + req.body.path
