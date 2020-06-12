@@ -1,5 +1,17 @@
 const cloudant = require('./cloudantControl');
+const certification  = require('./multerControl').certification;
+const profile  = require('./multerControl').profile;
+
+
+
 function appApiPathCreate(app){
+
+  app.post('/profile', profile.single('uploaded_file'), function (req, res) {
+    cloudant.dbControl.getCertificationControl().set.profile(cloudant.dbControl,req,res);
+  });
+  app.post('/certificationbyimg', certification.single('uploaded_file'), function (req, res) {
+     cloudant.dbControl.getCertificationControl().set.certification(cloudant.dbControl,req,res);
+  });
   app.post("/api/createlogin",function(req,res){
     cloudant.dbControl.getInsertControl().set.login(cloudant.dbControl,req,res);
   });
