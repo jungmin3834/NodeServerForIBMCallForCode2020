@@ -24,7 +24,7 @@ function appApiPathCreate(app){
     cloudant.dbControl.getControl().get.productInfo(cloudant.dbControl,req,res);
   });
 
-  app.get("/api/postinfo",function(req,res){
+  app.post("/api/postinfo",function(req,res){
     cloudant.dbControl.getControl().get.postinfo(cloudant.dbControl,req,res);
   });
 
